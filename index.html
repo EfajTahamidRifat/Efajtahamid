@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dewan Efaj Tahamid Rifat · AI & Web Architect</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        body { background: #0a0a0a; color: #e0e0e0; overflow-x: hidden; }
+        .gradient-text {
+            background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #c084fc 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            background-size: 200% 200%; animation: gradient 8s ease infinite;
+        }
+        @keyframes gradient { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+        .gradient-bg {
+            background: linear-gradient(135deg, #7c3aed 0%, #2563eb 50%, #9333ea 100%);
+            background-size: 200% 200%; animation: gradient 8s ease infinite;
+        }
+        .gradient-border {
+            position: relative; background: linear-gradient(135deg, #7c3aed, #2563eb, #9333ea);
+            padding: 2px; border-radius: 1rem; animation: borderRotate 4s linear infinite;
+        }
+        @keyframes borderRotate { 0%,100% { filter: hue-rotate(0deg); } 50% { filter: hue-rotate(30deg); } }
+        .gradient-border > div { background: #111827; border-radius: 0.95rem; }
+        .glass-effect {
+            background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(10px);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+        }
+        .hover-scale { transition: all 0.3s ease; }
+        .hover-scale:hover { transform: scale(1.05); box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.5); }
+        .floating { animation: floating 3s ease-in-out infinite; }
+        @keyframes floating { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+        .glow { box-shadow: 0 0 30px rgba(124, 58, 237, 0.3); }
+        .glow:hover { box-shadow: 0 0 50px rgba(124, 58, 237, 0.6); }
+        .typewriter {
+            overflow: hidden; border-right: .15em solid #7c3aed; white-space: nowrap; margin: 0 auto;
+            letter-spacing: .15em; animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #7c3aed; } }
+        .secret-card { position: relative; overflow: hidden; }
+        .secret-card::before {
+            content: "⚡ hidden skill"; position: absolute; top: 10px; right: -40px;
+            background: #f59e0b; color: #000; padding: 5px 40px; transform: rotate(45deg);
+            font-size: 12px; font-weight: bold; z-index: 10;
+        }
+        .investment-badge {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #000; font-weight: bold;
+            padding: 0.5rem 1.5rem; border-radius: 9999px; display: inline-block;
+            transform: rotate(-2deg); box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.3);
+        }
+        .profile-image {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; 
+            box-shadow: 0 0 0 4px #7c3aed, 0 0 0 8px #2563eb33;
+            animation: morph 8s ease-in-out infinite;
+        }
+        @keyframes morph {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="glass-effect fixed w-full z-50 top-0 border-b border-purple-900/20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="flex items-center space-x-2">
+                    <span class="text-xl font-bold gradient-text">Efaj Rifat</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-white transition text-sm font-medium">About</a>
+                    <a href="#skills" class="text-gray-300 hover:text-white transition text-sm font-medium">Skills</a>
+                    <a href="#experience" class="text-gray-300 hover:text-white transition text-sm font-medium">Experience</a>
+                    <a href="#projects" class="text-gray-300 hover:text-white transition text-sm font-medium">Projects</a>
+                    <a href="#pricing" class="text-gray-300 hover:text-white transition text-sm font-medium">Pricing</a>
+                    <a href="https://github.com/EfajTahamidRifat" target="_blank" class="text-gray-300 hover:text-white transition"><i class="fab fa-github text-xl"></i></a>
+                    <a href="#contact" class="gradient-bg text-white px-5 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition glow"><i class="fas fa-paper-plane mr-2"></i>Contact</a>
+                </div>
+                <button class="md:hidden text-gray-300 hover:text-white" onclick="toggleMobileMenu()"><i class="fas fa-bars text-2xl"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800 px-4 py-3">
+            <a href="#about" class="block py-2 text-gray-300 hover:text-white">About</a>
+            <a href="#skills" class="block py-2 text-gray-300 hover:text-white">Skills</a>
+            <a href="#experience" class="block py-2 text-gray-300 hover:text-white">Experience</a>
+            <a href="#projects" class="block py-2 text-gray-300 hover:text-white">Projects</a>
+            <a href="#pricing" class="block py-2 text-gray-300 hover:text-white">Pricing</a>
+            <a href="#contact" class="block py-2 gradient-bg text-white px-4 rounded-lg text-center mt-2">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl animate-pulse animation-delay-2000"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="flex-1 text-center lg:text-left" data-aos="fade-right">
+                    <span class="investment-badge animate-bounce mb-6 inline-block"><i class="fas fa-crown mr-2"></i>3+ years · 200+ projects</span>
+                    <h1 class="text-5xl md:text-7xl font-extrabold mb-4"><span class="gradient-text">Dewan Efaj</span> <span class="text-white">Tahamid Rifat</span></h1>
+                    <p class="text-xl md:text-2xl text-gray-400 mb-4">22 y/o · AI & Web Architect</p>
+                    <div class="text-xl text-purple-300 mb-6 typewriter inline-block">Next.js · Python · LLM · Flutter</div>
+                    <p class="text-gray-400 max-w-xl mb-8">Diploma CS student, indie developer, startup partner. I build whatever you need — legally.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#projects" class="gradient-bg text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition glow"><i class="fas fa-code mr-2"></i>View work</a>
+                        <a href="#contact" class="border border-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-600/20 transition"><i class="fab fa-whatsapp mr-2"></i>WhatsApp</a>
+                    </div>
+                </div>
+                <div class="flex-1 flex justify-center" data-aos="fade-left">
+                    <img src="https://i.ibb.co.com/fzBKmXXB/1773132939640.jpg" alt="Dewan Efaj Tahamid Rifat" class="profile-image w-64 h-64 md:w-80 md:h-80 object-cover floating glow">
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-16" data-aos="fade-up">
+                <div class="text-center"><div class="text-3xl font-bold gradient-text">200+</div><div class="text-gray-400">web projects</div></div>
+                <div class="text-center"><div class="text-3xl font-bold gradient-text">60+</div><div class="text-gray-400">Python certs</div></div>
+                <div class="text-center"><div class="text-3xl font-bold gradient-text">60+</div><div class="text-gray-400">Node.js certs</div></div>
+                <div class="text-center"><div class="text-3xl font-bold gradient-text">10%</div><div class="text-gray-400">equity deals</div></div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"><div class="text-gray-500 text-sm flex flex-col items-center"><span>scroll</span><i class="fas fa-chevron-down mt-1"></i></div></div>
+    </section>
+
+    <!-- About + Lunvex Story -->
+    <section id="about" class="py-20 bg-gray-900/50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-center"><span class="gradient-text">the story</span></h2>
+                <div class="gradient-border">
+                    <div class="p-8 bg-gray-800">
+                        <i class="fas fa-quote-right text-4xl text-purple-400 mb-4"></i>
+                        <p class="text-xl text-gray-300 leading-relaxed mb-6">
+                            I'm Dewan Efaj Tahamid Rifat, 22, currently studying CS at Image Polytechnic Institute, Rangpur. 
+                            Three years ago I started building for the web — now I've shipped over 200 projects. 
+                            I partner with startups: I build their websites, automation, management systems, and take 10% equity.
+                        </p>
+                        <p class="text-xl text-gray-300 leading-relaxed mb-6">
+                            In 2025 I founded <span class="font-bold text-purple-400">Lunvex Labs</span> — a short-lived indie studio that got taken down, but the spirit lives on. 
+                            Every line of code I write carries that hustle.
+                        </p>
+                        <div class="flex items-center space-x-2 text-yellow-400"><i class="fas fa-robot"></i><span>AI / LLM / VML intermediate · always learning</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up"><h2 class="text-4xl md:text-5xl font-bold mb-4"><span class="gradient-text">expertise</span></h2><p class="text-xl text-gray-400">full-stack · AI · mobile</p></div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="gradient-border" data-aos="zoom-in"><div class="p-6 bg-gray-800 text-center"><i class="fab fa-python text-5xl text-purple-400 mb-3"></i><h3 class="font-bold">Python</h3><p class="text-sm text-gray-400">60+ certificates</p></div></div>
+                <div class="gradient-border" data-aos="zoom-in" data-aos-delay="100"><div class="p-6 bg-gray-800 text-center"><i class="fab fa-js text-5xl text-yellow-400 mb-3"></i><h3 class="font-bold">Node.js</h3><p class="text-sm text-gray-400">60+ certificates</p></div></div>
+                <div class="gradient-border" data-aos="zoom-in" data-aos-delay="200"><div class="p-6 bg-gray-800 text-center"><i class="fab fa-react text-5xl text-blue-400 mb-3"></i><h3 class="font-bold">Next.js</h3><p class="text-sm text-gray-400">200+ projects</p></div></div>
+                <div class="gradient-border" data-aos="zoom-in" data-aos-delay="300"><div class="p-6 bg-gray-800 text-center"><i class="fas fa-brain text-5xl text-green-400 mb-3"></i><h3 class="font-bold">LLM / VLM</h3><p class="text-sm text-gray-400">intermediate</p></div></div>
+                <div class="gradient-border" data-aos="zoom-in"><div class="p-6 bg-gray-800 text-center"><i class="fab fa-flask text-5xl text-orange-400 mb-3"></i><h3 class="font-bold">Flask</h3></div></div>
+                <div class="gradient-border" data-aos="zoom-in" data-aos-delay="100"><div class="p-6 bg-gray-800 text-center"><i class="fab fa-android text-5xl text-green-500 mb-3"></i><h3 class="font-bold">Flutter/Kotlin</h3><p class="text-sm text-gray-400">basic</p></div></div>
+                <div class="gradient-border" data-aos="zoom-in" data-aos-delay="200"><div class="p-6 bg-gray-800 text-center"><i class="fas fa-code text-5xl text-pink-400 mb-3"></i><h3 class="font-bold">HTML/CSS/JS</h3></div></div>
+                <div class="gradient-border secret-card" data-aos="zoom-in" data-aos-delay="300"><div class="p-6 bg-gray-800 text-center"><i class="fas fa-rocket text-5xl text-purple-400 mb-3"></i><h3 class="font-bold">Startup equity</h3><p class="text-sm text-gray-400">10% partner</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience / timeline -->
+    <section id="experience" class="py-20 bg-gray-900/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up"><h2 class="text-4xl md:text-5xl font-bold mb-4"><span class="gradient-text">path</span></h2></div>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <div class="flex gap-4" data-aos="fade-right"><div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-2xl font-bold shrink-0">2023</div><div><h3 class="text-2xl font-bold">Started freelancing</h3><p class="text-gray-400">Built first 50 web projects · discovered AI</p></div></div>
+                <div class="flex gap-4" data-aos="fade-right" data-aos-delay="100"><div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-2xl font-bold shrink-0">2024</div><div><h3 class="text-2xl font-bold">Startup partner</h3><p class="text-gray-400">Helped 3 startups with web & automation in exchange for 10% equity each.</p></div></div>
+                <div class="flex gap-4" data-aos="fade-right" data-aos-delay="200"><div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-2xl font-bold shrink-0">2025</div><div><h3 class="text-2xl font-bold">Founded Lunvex Labs</h3><p class="text-gray-400">Indie studio, taken down same year — but the experience shaped my approach.</p></div></div>
+                <div class="flex gap-4" data-aos="fade-right" data-aos-delay="300"><div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-2xl font-bold shrink-0">Now</div><div><h3 class="text-2xl font-bold">AI & web architect</h3><p class="text-gray-400">Available for contracts, equity partnerships, and bold ideas.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects (realistic descriptions) -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up"><h2 class="text-4xl md:text-5xl font-bold mb-4"><span class="gradient-text">recent builds</span></h2><p class="text-xl text-gray-400">no links — just work</p></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="gradient-border" data-aos="flip-left"><div class="p-6 bg-gray-800"><img src="https://placehold.co/600x400/2a2a2a/7c3aed?text=AI+CMS" class="rounded-lg mb-4 w-full h-40 object-cover"><h3 class="text-xl font-bold mb-2">AI Content CMS</h3><p class="text-gray-400 text-sm mb-3">LLM-powered CMS for startups, auto-generates blog posts & meta. Used by 3 early-stage companies.</p><div class="flex gap-2 text-xs"><span class="bg-purple-900/50 px-2 py-1 rounded">Next.js</span><span class="bg-purple-900/50 px-2 py-1 rounded">Python</span><span class="bg-purple-900/50 px-2 py-1 rounded">OpenAI</span></div></div></div>
+                <div class="gradient-border" data-aos="flip-left" data-aos-delay="100"><div class="p-6 bg-gray-800"><img src="https://placehold.co/600x400/2a2a2a/2563eb?text=Equity+Dashboard" class="rounded-lg mb-4 w-full h-40 object-cover"><h3 class="text-xl font-bold mb-2">Startup Equity Dashboard</h3><p class="text-gray-400 text-sm mb-3">Real-time equity, cap table, and automation for founders who exchange equity for dev work.</p><div class="flex gap-2 text-xs"><span class="bg-blue-900/50 px-2 py-1 rounded">Node.js</span><span class="bg-blue-900/50 px-2 py-1 rounded">React</span><span class="bg-blue-900/50 px-2 py-1 rounded">Flask</span></div></div></div>
+                <div class="gradient-border" data-aos="flip-left" data-aos-delay="200"><div class="p-6 bg-gray-800"><img src="https://placehold.co/600x400/2a2a2a/9333ea?text=Fine-tune+Studio" class="rounded-lg mb-4 w-full h-40 object-cover"><h3 class="text-xl font-bold mb-2">LLM Fine-tuning Toolkit</h3><p class="text-gray-400 text-sm mb-3">Web interface to fine-tune LLaMA models on custom data. Used by a research group.</p><div class="flex gap-2 text-xs"><span class="bg-purple-900/50 px-2 py-1 rounded">Python</span><span class="bg-purple-900/50 px-2 py-1 rounded">FastAPI</span><span class="bg-purple-900/50 px-2 py-1 rounded">PyTorch</span></div></div></div>
+                <div class="gradient-border" data-aos="flip-left" data-aos-delay="300"><div class="p-6 bg-gray-800"><img src="https://placehold.co/600x400/2a2a2a/f59e0b?text=Flutter+POS" class="rounded-lg mb-4 w-full h-40 object-cover"><h3 class="text-xl font-bold mb-2">Flutter POS System</h3><p class="text-gray-400 text-sm mb-3">Point-of-sale for a local shop, with inventory and basic analytics (Kotlin backend).</p><div class="flex gap-2 text-xs"><span class="bg-yellow-900/50 px-2 py-1 rounded">Flutter</span><span class="bg-yellow-900/50 px-2 py-1 rounded">Kotlin</span><span class="bg-yellow-900/50 px-2 py-1 rounded">SQLite</span></div></div></div>
+                <div class="gradient-border" data-aos="flip-left" data-aos-delay="400"><div class="p-6 bg-gray-800"><img src="https://placehold.co/600x400/2a2a2a/10b981?text=Auto+Blogger" class="rounded-lg mb-4 w-full h-40 object-cover"><h3 class="text-xl font-bold mb-2">Automated Blogger</h3><p class="text-gray-400 text-sm mb-3">SEO-optimized content generator with WordPress integration — 50+ active blogs.</p><div class="flex gap-2 text-xs"><span class="bg-green-900/50 px-2 py-1 rounded">Python</span><span class="bg-green-900/50 px-2 py-1 rounded">LLM</span><span class="bg-green-900/50 px-2 py-1 rounded">WP API</span></div></div></div>
+                <div class="gradient-border" data-aos="flip-left" data-aos-delay="500"><div class="p-6 bg-gray-800"><img src="https://placehold.co/600x400/2a2a2a/ec4899?text=Lunvex+Landing" class="rounded-lg mb-4 w-full h-40 object-cover"><h3 class="text-xl font-bold mb-2">Lunvex Labs (archived)</h3><p class="text-gray-400 text-sm mb-3">The official landing page for my former studio — fully animated, but taken down in 2025.</p><div class="flex gap-2 text-xs"><span class="bg-pink-900/50 px-2 py-1 rounded">Next.js</span><span class="bg-pink-900/50 px-2 py-1 rounded">Framer</span><span class="bg-pink-900/50 px-2 py-1 rounded">Three.js</span></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / contact (updated to reflect minimum budget and DM for quote) -->
+    <section id="pricing" class="py-20 bg-gray-900/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up"><h2 class="text-4xl md:text-5xl font-bold mb-4"><span class="gradient-text">start something</span></h2><p class="text-xl text-gray-400">minimum $80 · DM for exact quote</p></div>
+            <div class="max-w-md mx-auto" data-aos="flip-up">
+                <div class="gradient-border glow"><div class="p-8 bg-gray-800 text-center">
+                    <span class="text-sm uppercase tracking-wider text-gray-400">starting at</span>
+                    <div class="text-5xl font-bold my-4 gradient-text">$80</div>
+                    <p class="text-gray-400 mb-2">≈ 9600 BDT  |  ≈ 6600 INR  |  ≈ 22000 PKR</p>
+                    <p class="text-sm text-gray-500 mb-6">Minimum budget · DM for exact quote</p>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Full website/web app</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> AI integration if needed</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> Automation & management</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i> 10% equity option for startups</li>
+                    </ul>
+                    <a href="#contact" class="gradient-bg text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition glow w-full block"><i class="fab fa-whatsapp mr-2"></i>ping via WhatsApp</a>
+                </div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / social -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4 max-w-3xl text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 gradient-text" data-aos="fade-up">reach out</h2>
+            <div class="flex flex-col sm:flex-row justify-center gap-6 items-center mb-8" data-aos="fade-up">
+                <div class="flex items-center gap-3 bg-gray-800 px-6 py-4 rounded-full"><i class="fab fa-whatsapp text-2xl text-green-400"></i><span class="text-gray-300">+8801748305640</span></div>
+                <div class="flex items-center gap-3 bg-gray-800 px-6 py-4 rounded-full"><i class="fas fa-envelope text-2xl text-purple-400"></i><span class="text-gray-300">Efajtahamid@gmail.com</span></div>
+                <a href="https://github.com/EfajTahamidRifat" target="_blank" class="flex items-center gap-3 bg-gray-800 px-6 py-4 rounded-full hover:bg-gray-700"><i class="fab fa-github text-2xl"></i><span>/EfajTahamidRifat</span></a>
+            </div>
+            <div class="flex justify-center space-x-4 text-3xl text-gray-500">
+                <a href="https://www.facebook.com/EfajtahamidRifat" target="_blank" class="hover:text-white"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/efaj-tahamid-rifat-b0b28533b" target="_blank" class="hover:text-white"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/EfajTahamidRifat" target="_blank" class="hover:text-white"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center text-gray-500">
+            <p>© 2026 Dewan Efaj Tahamid Rifat — built with <i class="fas fa-heart text-red-500"></i> and 200+ projects of experience</p>
+            <p class="text-sm mt-2">Lunvex Labs (2025) · 10% equity partnerships · always building</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) { e.preventDefault(); document.querySelector(this.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' }); });
+        });
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            window.scrollY > 100 ? (nav.classList.add('bg-gray-900/90'), nav.classList.remove('glass-effect')) : (nav.classList.remove('bg-gray-900/90'), nav.classList.add('glass-effect'));
+        });
+        console.log('%c🔥 Efaj Rifat · AI & Web Architect', 'color: #a78bfa; font-size: 18px; font-weight: bold');
+        console.log('%c3+ years · 200+ projects · 10% equity deals', 'color: #60a5fa; font-size: 14px');
+    </script>
+</body>
+</html>
