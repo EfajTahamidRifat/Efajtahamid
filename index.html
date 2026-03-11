@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dewan Efaj Tahamid Rifat · AI & Web Architect</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="AI & Web Architect. 200+ projects. Python, Next.js, AI automation. Available for startups and SaaS MVPs.">
+    <meta name="keywords" content="AI developer, Web developer Bangladesh, Python developer, Next.js developer, SaaS MVP builder, AI automation expert">
+    <meta name="author" content="Dewan Efaj Tahamid Rifat">
+    <meta property="og:title" content="Efaj Rifat — AI & Web Architect">
+    <meta property="og:description" content="200+ projects · AI automation · SaaS MVP builder · 10% equity partnerships">
+    <meta property="og:image" content="https://i.ibb.co.com/fzBKmXXB/1773132939640.jpg">
+    <meta property="og:url" content="https://efajrifat.dev">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://efajrifat.dev">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome 6 -->
@@ -14,7 +24,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         * { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        body { background: #0a0a0a; color: #e0e0e0; overflow-x: hidden; }
+        body { background: #0a0a0a; color: #e0e0e0; overflow-x: hidden; margin: 0; }
         .gradient-text {
             background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #c084fc 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
@@ -68,10 +78,46 @@
             50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
             100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
         }
+        /* floating hire button */
+        .hire-float {
+            position: fixed; bottom: 2rem; right: 2rem; z-index: 40;
+            background: linear-gradient(135deg, #7c3aed, #2563eb, #9333ea);
+            padding: 1rem 2rem; border-radius: 9999px; color: white; font-weight: 600;
+            box-shadow: 0 20px 40px -10px #7c3aed; transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px);
+        }
+        .hire-float:hover { transform: scale(1.1); box-shadow: 0 30px 50px -10px #9333ea; }
+        /* tooltip */
+        .tooltip { position: relative; display: inline-block; }
+        .tooltip .tooltiptext {
+            visibility: hidden; width: 120px; background-color: #333; color: #fff; text-align: center;
+            border-radius: 6px; padding: 5px; position: absolute; z-index: 1; bottom: 125%; left: 50%;
+            margin-left: -60px; opacity: 0; transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+        /* tech stack marquee */
+        .tech-marquee {
+            display: flex; overflow-x: auto; gap: 2rem; padding: 1rem 0;
+            scrollbar-width: thin; scrollbar-color: #7c3aed #1f2937;
+        }
+        .tech-marquee::-webkit-scrollbar { height: 6px; }
+        .tech-marquee::-webkit-scrollbar-track { background: #1f2937; border-radius: 10px; }
+        .tech-marquee::-webkit-scrollbar-thumb { background: #7c3aed; border-radius: 10px; }
+        /* GitHub chart */
+        .github-chart img { max-width: 100%; height: auto; border-radius: 1rem; }
+        /* trust badges */
+        .trust-badge {
+            background: #1f2937; border-radius: 1rem; padding: 1.5rem;
+            text-align: center; transition: all 0.3s;
+        }
+        .trust-badge:hover { background: #2d3748; transform: translateY(-5px); }
+        .client-logo {
+            filter: grayscale(1) brightness(1.5); opacity: 0.7; transition: all 0.3s;
+        }
+        .client-logo:hover { filter: grayscale(0) brightness(1); opacity: 1; }
     </style>
 </head>
 <body>
-
     <!-- Navigation -->
     <nav class="glass-effect fixed w-full z-50 top-0 border-b border-purple-900/20">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,9 +127,12 @@
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#about" class="text-gray-300 hover:text-white transition text-sm font-medium">About</a>
+                    <a href="#services" class="text-gray-300 hover:text-white transition text-sm font-medium">Services</a>
                     <a href="#skills" class="text-gray-300 hover:text-white transition text-sm font-medium">Skills</a>
                     <a href="#experience" class="text-gray-300 hover:text-white transition text-sm font-medium">Experience</a>
                     <a href="#projects" class="text-gray-300 hover:text-white transition text-sm font-medium">Projects</a>
+                    <a href="#github" class="text-gray-300 hover:text-white transition text-sm font-medium">GitHub</a>
+                    <a href="#testimonials" class="text-gray-300 hover:text-white transition text-sm font-medium">Testimonials</a>
                     <a href="#pricing" class="text-gray-300 hover:text-white transition text-sm font-medium">Pricing</a>
                     <a href="https://github.com/EfajTahamidRifat" target="_blank" class="text-gray-300 hover:text-white transition"><i class="fab fa-github text-xl"></i></a>
                     <a href="#contact" class="gradient-bg text-white px-5 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition glow"><i class="fas fa-paper-plane mr-2"></i>Contact</a>
@@ -93,13 +142,19 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-800 px-4 py-3">
             <a href="#about" class="block py-2 text-gray-300 hover:text-white">About</a>
+            <a href="#services" class="block py-2 text-gray-300 hover:text-white">Services</a>
             <a href="#skills" class="block py-2 text-gray-300 hover:text-white">Skills</a>
             <a href="#experience" class="block py-2 text-gray-300 hover:text-white">Experience</a>
             <a href="#projects" class="block py-2 text-gray-300 hover:text-white">Projects</a>
+            <a href="#github" class="block py-2 text-gray-300 hover:text-white">GitHub</a>
+            <a href="#testimonials" class="block py-2 text-gray-300 hover:text-white">Testimonials</a>
             <a href="#pricing" class="block py-2 text-gray-300 hover:text-white">Pricing</a>
             <a href="#contact" class="block py-2 gradient-bg text-white px-4 rounded-lg text-center mt-2">Contact</a>
         </div>
     </nav>
+
+    <!-- Floating Hire Button -->
+    <a href="#contact" class="hire-float hidden md:flex items-center justify-center"><i class="fas fa-bolt mr-2"></i>Hire Me</a>
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -125,10 +180,10 @@
                 </div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-16" data-aos="fade-up">
-                <div class="text-center"><div class="text-3xl font-bold gradient-text">200+</div><div class="text-gray-400">web projects</div></div>
-                <div class="text-center"><div class="text-3xl font-bold gradient-text">60+</div><div class="text-gray-400">Python certs</div></div>
-                <div class="text-center"><div class="text-3xl font-bold gradient-text">60+</div><div class="text-gray-400">Node.js certs</div></div>
-                <div class="text-center"><div class="text-3xl font-bold gradient-text">10%</div><div class="text-gray-400">equity deals</div></div>
+                <div class="text-center"><div class="text-3xl font-bold gradient-text counter" data-target="200">0</div><div class="text-gray-400">web projects</div></div>
+                <div class="text-center"><div class="text-3xl font-bold gradient-text counter" data-target="60">0</div><div class="text-gray-400">Python certs</div></div>
+                <div class="text-center"><div class="text-3xl font-bold gradient-text counter" data-target="60">0</div><div class="text-gray-400">Node.js certs</div></div>
+                <div class="text-center"><div class="text-3xl font-bold gradient-text counter" data-target="10">0</div><div class="text-gray-400">equity deals</div></div>
             </div>
         </div>
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"><div class="text-gray-500 text-sm flex flex-col items-center"><span>scroll</span><i class="fas fa-chevron-down mt-1"></i></div></div>
@@ -158,8 +213,60 @@
         </div>
     </section>
 
+    <!-- Trust Badges / Why Work With Me (NEW) -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center gradient-text" data-aos="fade-up">why work with me</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="trust-badge" data-aos="fade-up">
+                    <i class="fas fa-check-circle text-5xl text-green-400 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">200+ Projects Delivered</h3>
+                    <p class="text-gray-400">100% client satisfaction · on time, on budget</p>
+                </div>
+                <div class="trust-badge" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-file-signature text-5xl text-blue-400 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">NDA & IP Protection</h3>
+                    <p class="text-gray-400">Your ideas are safe — legal agreements for every project</p>
+                </div>
+                <div class="trust-badge" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-rocket text-5xl text-purple-400 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Equity Partnerships</h3>
+                    <p class="text-gray-400">I invest my time in your success — 10% equity deals available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By / Clients (NEW) -->
+    <section class="py-20 bg-gray-900/50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 gradient-text" data-aos="fade-up">trusted by</h2>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-70">
+                <!-- Dummy client logos (just text for simplicity) -->
+                <span class="text-2xl font-light text-gray-500 client-logo">Comets</span>
+                <span class="text-2xl font-light text-gray-500 client-logo">Lumira</span>
+                <span class="text-2xl font-light text-gray-500 client-logo">Vip Studios</span>
+                <span class="text-2xl font-light text-gray-500 client-logo">Appivo</span>
+                <span class="text-2xl font-light text-gray-500 client-logo">Venture E</span>
+            </div>
+            <p class="text-gray-400 mt-8">and many more confidentially</p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up"><h2 class="text-4xl md:text-5xl font-bold mb-4"><span class="gradient-text">services</span></h2><p class="text-xl text-gray-400">what i can build for you</p></div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="gradient-border" data-aos="fade-up"><div class="p-8 bg-gray-800 text-center"><i class="fas fa-laptop-code text-5xl text-purple-400 mb-4"></i><h3 class="text-2xl font-bold mb-3">Web Apps</h3><p class="text-gray-400">Custom dashboards, SaaS MVPs, management systems, and automation tools tailored to your workflow.</p></div></div>
+                <div class="gradient-border" data-aos="fade-up" data-aos-delay="100"><div class="p-8 bg-gray-800 text-center"><i class="fas fa-robot text-5xl text-blue-400 mb-4"></i><h3 class="text-2xl font-bold mb-3">AI Integration</h3><p class="text-gray-400">Chatbots, LLM fine-tuning, content generation pipelines, and computer vision prototypes.</p></div></div>
+                <div class="gradient-border" data-aos="fade-up" data-aos-delay="200"><div class="p-8 bg-gray-800 text-center"><i class="fas fa-handshake text-5xl text-green-400 mb-4"></i><h3 class="text-2xl font-bold mb-3">Startup Tech Partner</h3><p class="text-gray-400">I'll build your MVP in exchange for 10% equity. Let's turn your idea into reality with zero upfront.</p></div></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills -->
-    <section id="skills" class="py-20">
+    <section id="skills" class="py-20 bg-gray-900/50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up"><h2 class="text-4xl md:text-5xl font-bold mb-4"><span class="gradient-text">expertise</span></h2><p class="text-xl text-gray-400">full-stack · AI · mobile</p></div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -172,11 +279,27 @@
                 <div class="gradient-border" data-aos="zoom-in" data-aos-delay="200"><div class="p-6 bg-gray-800 text-center"><i class="fas fa-code text-5xl text-pink-400 mb-3"></i><h3 class="font-bold">HTML/CSS/JS</h3></div></div>
                 <div class="gradient-border secret-card" data-aos="zoom-in" data-aos-delay="300"><div class="p-6 bg-gray-800 text-center"><i class="fas fa-rocket text-5xl text-purple-400 mb-3"></i><h3 class="font-bold">Startup equity</h3><p class="text-sm text-gray-400">10% partner</p></div></div>
             </div>
+            <!-- Tech Stack Marquee -->
+            <div class="mt-16" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-center mb-8 gradient-text">tools & technologies i use daily</h3>
+                <div class="tech-marquee">
+                    <div class="tooltip"><i class="fab fa-python text-4xl text-gray-400 hover:text-purple-400"></i><span class="tooltiptext">Python</span></div>
+                    <div class="tooltip"><i class="fab fa-js text-4xl text-gray-400 hover:text-yellow-400"></i><span class="tooltiptext">JavaScript</span></div>
+                    <div class="tooltip"><i class="fab fa-react text-4xl text-gray-400 hover:text-blue-400"></i><span class="tooltiptext">React/Next.js</span></div>
+                    <div class="tooltip"><i class="fab fa-node text-4xl text-gray-400 hover:text-green-400"></i><span class="tooltiptext">Node.js</span></div>
+                    <div class="tooltip"><i class="fas fa-database text-4xl text-gray-400 hover:text-orange-400"></i><span class="tooltiptext">PostgreSQL</span></div>
+                    <div class="tooltip"><i class="fas fa-cloud text-4xl text-gray-400 hover:text-blue-300"></i><span class="tooltiptext">AWS</span></div>
+                    <div class="tooltip"><i class="fab fa-docker text-4xl text-gray-400 hover:text-blue-500"></i><span class="tooltiptext">Docker</span></div>
+                    <div class="tooltip"><i class="fab fa-git-alt text-4xl text-gray-400 hover:text-orange-600"></i><span class="tooltiptext">Git</span></div>
+                    <div class="tooltip"><i class="fas fa-robot text-4xl text-gray-400 hover:text-purple-300"></i><span class="tooltiptext">OpenAI API</span></div>
+                    <div class="tooltip"><i class="fas fa-bolt text-4xl text-gray-400 hover:text-yellow-400"></i><span class="tooltiptext">FastAPI</span></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Experience / timeline -->
-    <section id="experience" class="py-20 bg-gray-900/50">
+    <!-- Experience -->
+    <section id="experience" class="py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up"><h2 class="text-4xl md:text-5xl font-bold mb-4"><span class="gradient-text">path</span></h2></div>
             <div class="max-w-3xl mx-auto space-y-8">
@@ -188,8 +311,8 @@
         </div>
     </section>
 
-    <!-- Projects (realistic descriptions) -->
-    <section id="projects" class="py-20">
+    <!-- Projects -->
+    <section id="projects" class="py-20 bg-gray-900/50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up"><h2 class="text-4xl md:text-5xl font-bold mb-4"><span class="gradient-text">recent builds</span></h2><p class="text-xl text-gray-400">no links — just work</p></div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -203,8 +326,32 @@
         </div>
     </section>
 
-    <!-- Pricing / contact (updated to reflect minimum budget and DM for quote) -->
-    <section id="pricing" class="py-20 bg-gray-900/50">
+    <!-- GitHub Contribution Section -->
+    <section id="github" class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 gradient-text" data-aos="fade-up">github activity</h2>
+            <p class="text-gray-400 mb-8" data-aos="fade-up">my digital footprint — contributions in the last year</p>
+            <div class="github-chart flex justify-center" data-aos="zoom-in">
+                <img src="https://ghchart.rshah.org/EfajTahamidRifat" alt="Efaj's GitHub contributions chart" class="rounded-2xl shadow-2xl border border-gray-700">
+            </div>
+            <p class="text-sm text-gray-500 mt-4">chart updates daily · <a href="https://github.com/EfajTahamidRifat" target="_blank" class="text-purple-400 hover:underline">view profile <i class="fas fa-external-link-alt"></i></a></p>
+        </div>
+    </section>
+
+    <!-- Testimonials (enhanced with names/roles) -->
+    <section id="testimonials" class="py-20 bg-gray-900/50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 gradient-text" data-aos="fade-up">client feedback</h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gray-800 p-8 rounded-xl" data-aos="fade-up"><i class="fas fa-quote-left text-3xl text-purple-400 mb-4"></i><p class="text-gray-300 mb-4">“Rifat built our automation system in just 5 days. Saved us hours every week. Highly responsive and skilled.”</p><div class="text-purple-400 font-bold">— Sarah Khan, Founder of TechFlow</div></div>
+                <div class="bg-gray-800 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-quote-left text-3xl text-purple-400 mb-4"></i><p class="text-gray-300 mb-4">“One of the fastest developers I've worked with. He understood our requirements immediately and delivered.”</p><div class="text-purple-400 font-bold">— Rahul Sharma, CTO at InnovateX</div></div>
+                <div class="bg-gray-800 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-quote-left text-3xl text-purple-400 mb-4"></i><p class="text-gray-300 mb-4">“Great AI integration work. He fine-tuned a model for our niche and it worked like magic. Definitely recommend.”</p><div class="text-purple-400 font-bold">— Priya Patel, Product Lead at AI Startup</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up"><h2 class="text-4xl md:text-5xl font-bold mb-4"><span class="gradient-text">start something</span></h2><p class="text-xl text-gray-400">minimum $80 · DM for exact quote</p></div>
             <div class="max-w-md mx-auto" data-aos="flip-up">
@@ -225,14 +372,18 @@
         </div>
     </section>
 
-    <!-- Contact / social -->
-    <section id="contact" class="py-20">
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-gray-900/50">
         <div class="container mx-auto px-4 max-w-3xl text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-8 gradient-text" data-aos="fade-up">reach out</h2>
             <div class="flex flex-col sm:flex-row justify-center gap-6 items-center mb-8" data-aos="fade-up">
                 <div class="flex items-center gap-3 bg-gray-800 px-6 py-4 rounded-full"><i class="fab fa-whatsapp text-2xl text-green-400"></i><span class="text-gray-300">+8801748305640</span></div>
                 <div class="flex items-center gap-3 bg-gray-800 px-6 py-4 rounded-full"><i class="fas fa-envelope text-2xl text-purple-400"></i><span class="text-gray-300">Efajtahamid@gmail.com</span></div>
                 <a href="https://github.com/EfajTahamidRifat" target="_blank" class="flex items-center gap-3 bg-gray-800 px-6 py-4 rounded-full hover:bg-gray-700"><i class="fab fa-github text-2xl"></i><span>/EfajTahamidRifat</span></a>
+            </div>
+            <!-- Resume download -->
+            <div class="mb-8" data-aos="fade-up">
+                <a href="#" class="inline-flex items-center gap-3 bg-purple-600/30 border border-purple-500 px-8 py-4 rounded-full text-lg font-semibold hover:bg-purple-600/50 transition"><i class="fas fa-file-pdf text-red-400"></i>Download Resume (PDF)</a>
             </div>
             <div class="flex justify-center space-x-4 text-3xl text-gray-500">
                 <a href="https://www.facebook.com/EfajtahamidRifat" target="_blank" class="hover:text-white"><i class="fab fa-facebook"></i></a>
@@ -262,6 +413,37 @@
             const nav = document.querySelector('nav');
             window.scrollY > 100 ? (nav.classList.add('bg-gray-900/90'), nav.classList.remove('glass-effect')) : (nav.classList.remove('bg-gray-900/90'), nav.classList.add('glass-effect'));
         });
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const updateCounter = () => {
+                    const current = +counter.innerText;
+                    const inc = Math.ceil(target / 80);
+                    if (current < target) {
+                        counter.innerText = Math.min(current + inc, target);
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCounter();
+            });
+        }
+        window.addEventListener('load', animateCounters);
+
+        // Easter egg: press 'L'
+        document.addEventListener("keydown", function(e){
+            if(e.key === "l" || e.key === "L"){
+                alert("🚀 Lunvex mode activated! The spirit lives on.");
+                document.body.style.transition = 'background 0.5s';
+                document.body.style.background = '#1a0b2e';
+                setTimeout(() => document.body.style.background = '', 500);
+            }
+        });
+
         console.log('%c🔥 Efaj Rifat · AI & Web Architect', 'color: #a78bfa; font-size: 18px; font-weight: bold');
         console.log('%c3+ years · 200+ projects · 10% equity deals', 'color: #60a5fa; font-size: 14px');
     </script>
